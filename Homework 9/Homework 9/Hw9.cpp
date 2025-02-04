@@ -83,8 +83,15 @@ int main() {
 
 	//9
 	int age = 7;
-	Cat Boots = Cat(age);
-	cout << "Boots is: " << Boots.GetAge() << " years old" << endl;
+	Cat* Boots = MakeCat(age);
+	cout << "Boots is: " << Boots->GetAge() << " years old" << endl;
+	delete Boots;
 
 	return 0;
+}
+
+Cat* MakeCat(int age)
+{
+	Cat* pCat = new Cat(age);
+	return pCat;
 }
